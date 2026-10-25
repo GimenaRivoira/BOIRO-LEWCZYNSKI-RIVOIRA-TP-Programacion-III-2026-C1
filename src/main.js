@@ -1,8 +1,12 @@
-//importar el framework
-const express = reuiere("express");
+//importaciones
+const express = require("express");
+const cors = require("cors")
+
+//Rutas
 const productoRouter = require("./productos/producto.routes");
 const detalle_ventasRouter = require("./detalle_ventas/detalle.routes");
 const usuarioRouter = require("./Usuario/usuario.routes");
+const inicioRouter = require("./inicio/inicio.routes");
 
 //const sequelize = require("./database/sequelize");
 
@@ -11,12 +15,15 @@ const app = express();
 
 //configuraciones extra
 app.use(express.json());
+app.use(cors());
 app.use("/imagenes", express.static("img")); // ejemplo clase
 
+//Definicion de rutas
 app.use("/public", express.static("public"));
+app.use("/inicio", inicioRouter);
+app.use("/productos", productoRouter);
 
 //definir rutas
-//app.use("/productos", productoRouter);
 //app.use("/detalle_ventas", detalle_ventasRouter);
 //app.use("/Usuario", usuarioRouter);
 
