@@ -1,14 +1,13 @@
 //importaciones
 const express = require("express");
-const cors = require("cors")
+const cors = require("cors");
 
 //Rutas
 const productoRouter = require("./productos/producto.routes");
-const detalle_ventasRouter = require("./detalle_ventas/detalle.routes");
-const usuarioRouter = require("./Usuario/usuario.routes");
-const inicioRouter = require("./inicio/inicio.routes");
+const detalle_ventasRouter = require("./ventas/venta.routes");
+const usuarioRouter = require("./Admins/admin.routes");
 
-//const sequelize = require("./database/sequelize");
+const sequelize = require("./database/sequelize");
 
 //crear la instancia
 const app = express();
@@ -20,7 +19,6 @@ app.use("/imagenes", express.static("img")); // ejemplo clase
 
 //Definicion de rutas
 app.use("/public", express.static("public"));
-app.use("/inicio", inicioRouter);
 app.use("/productos", productoRouter);
 
 //definir rutas
