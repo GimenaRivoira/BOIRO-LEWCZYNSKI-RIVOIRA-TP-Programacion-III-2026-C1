@@ -8,6 +8,7 @@ const detalle_ventasRouter = require("./ventas/venta.routes");
 const usuarioRouter = require("./Admins/admin.routes");
 
 const sequelize = require("./database/sequelize");
+const { Producto, Venta } = require("./database/relaciones");
 
 //crear la instancia
 const app = express();
@@ -20,10 +21,6 @@ app.use("/imagenes", express.static("img")); // ejemplo clase
 //Definicion de rutas
 app.use("/public", express.static("public"));
 app.use("/productos", productoRouter);
-
-//definir rutas
-//app.use("/detalle_ventas", detalle_ventasRouter);
-//app.use("/Usuario", usuarioRouter);
 
 //conectar la instancia al puerto elegido
 const PORT = 3000;
