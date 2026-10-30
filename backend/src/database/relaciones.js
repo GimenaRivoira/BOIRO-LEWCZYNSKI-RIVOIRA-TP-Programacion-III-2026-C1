@@ -1,7 +1,7 @@
 const sequelize = require("./sequelize");
 const Producto = require("../productos/producto.model");
-const Venta = require("../venta/venta.model");
-const ProductosVenta = require("./ProductosVenta.model");
+const Venta = require("../ventas/venta.model");
+const ProductosVenta = require("./Productos.Venta.model");
 
 Producto.belongsToMany(Venta, { through: ProductosVenta });
 Venta.belongsToMany(Producto, { through: ProductosVenta });
