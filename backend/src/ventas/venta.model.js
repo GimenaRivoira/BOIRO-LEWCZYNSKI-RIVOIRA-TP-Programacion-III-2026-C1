@@ -4,6 +4,8 @@ const sequelize = require("../database/sequelize");
 const Ventas = sequelize.define("Ventas", {
   id: {
     type: INTEGER,
+    primaryKey: true,
+    autoIncrement: true
   },
   fecha: {
     type: DataTypes.DATE,

@@ -3,6 +3,7 @@ const sequelize = require("./sequelize");
 
 //falta checkear al crear que las fk  aparezca de manera correcta.
 const ProductosVenta = sequelize.define(
+  "ProductosVenta",
   {
     id_detalle: {
       type: INTEGER,
@@ -14,12 +15,12 @@ const ProductosVenta = sequelize.define(
       allowNull: false,
     },
     precio_unitario: {
-      ype: INTEGER,
+      type: INTEGER,
       allowNull: false,
     },
   },
   {
-    tableName: "estudiantes",
+    tableName: "productos_ventas",
     timestamps: true,
     paranoid: true,
   },
