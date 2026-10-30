@@ -1,11 +1,10 @@
 const path = require("path");
 const { Producto } = require("../database/relaciones");
 
-/*const listarProductos = async (req, res) => {
-  await res.sendFile(path.join(__dirname, "productos.html"));
-  console.log("Metodo findAll para listar ");
+const listarProductos = async (req, res) => {
+  //Aca va la logica para listar los productos con findAll
 };
-*/
+
 module.exports = {
   listarProductos,
 };
