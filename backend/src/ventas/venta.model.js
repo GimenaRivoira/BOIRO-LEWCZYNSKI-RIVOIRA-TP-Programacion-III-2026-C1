@@ -1,4 +1,4 @@
-const { DataTypes, INTEGER } = require("sequelize");
+const { INTEGER, STRING, DATE } = require("sequelize");
 const sequelize = require("../database/sequelize");
 
 const Ventas = sequelize.define("Ventas", {
@@ -7,8 +7,12 @@ const Ventas = sequelize.define("Ventas", {
     primaryKey: true,
     autoIncrement: true
   },
+  nombre_cliente: {
+    type: STRING, 
+    allowNull:false
+  },
   fecha: {
-    type: DataTypes.DATE,
+    type: DATE,
   },
   total: {
     type: INTEGER,
