@@ -1,8 +1,18 @@
 const express = require("express");
-const { listarProductos } = require("./producto.controller");
+const {
+  crearprod,
+  traerprodporid,
+  traerproductos,
+  modficarprodporid,
+  eliminarprodporid,
+} = require("./producto.controller");
 
 const productoRouter = express.Router();
 
-productoRouter.get("/", listarProductos);
+productoRouter.get("/", traerproductos);
+productoRouter.get("/:id", traerprodporid);
+productoRouter.post("/", crearprod);
+productoRouter.put("/:id", modficarprodporid);
+productoRouter.get("/:id", eliminarprodporid);
 
 module.exports = productoRouter;

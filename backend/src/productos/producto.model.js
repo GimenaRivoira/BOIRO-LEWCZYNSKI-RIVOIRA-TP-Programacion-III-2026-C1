@@ -12,9 +12,9 @@ const Producto = sequelize.define(
     nombre: {
       type: DataTypes.STRING,
       allowNull: false,
-    }, //esto hay que checkear si se puede elegir exactamente entre dos palabras.
+    },
     tipo: {
-      type: DataTypes.STRING,
+      type: DataTypes.ENUM("flores", "velas"),
       allowNull: false,
     },
     precio: {
@@ -29,7 +29,7 @@ const Producto = sequelize.define(
       type: DataTypes.STRING,
     },
     imagen: {
-      type: DataTypes.BLOB,
+      type: DataTypes.STRING,
     },
   },
   {
