@@ -3,7 +3,6 @@ const express = require("express");
 const cors = require("cors");
 
 //Rutas
-const inicioRouter = require("./inicio/inicio.routes");
 const productoRouter = require("./productos/producto.routes");
 //const detalle_ventasRouter = require("./ventas/venta.routes"); 
 //const usuarioRouter = require("./Admins/admin.routes");
@@ -21,7 +20,6 @@ app.use(cors());
 app.use("/imagenes", express.static("img")); // ejemplo clase
 
 //Definicion de rutas
-app.use("/", inicioRouter);
 app.use("/productos", productoRouter);
 app.use("/public", express.static("public"));
 
