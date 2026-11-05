@@ -1,4 +1,4 @@
-const { DataTypes, INTEGER } = require("sequelize");
+const { DataTypes, INTEGER, ENUM } = require("sequelize");
 const sequelize = require("../database/sequelize");
 
 const Producto = sequelize.define(
@@ -16,6 +16,11 @@ const Producto = sequelize.define(
     tipo: {
       type: DataTypes.ENUM("flores", "velas"),
       allowNull: false,
+    },
+    tematica: {
+      type: DataTypes.ENUM("halloween", "navidad", "general"),
+      allowNull: false,
+      defaultValue: "general"
     },
     precio: {
       type: INTEGER,

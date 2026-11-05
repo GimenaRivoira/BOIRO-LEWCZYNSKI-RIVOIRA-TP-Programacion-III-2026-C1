@@ -7,10 +7,11 @@ const listarProductos = async (req, res) => {
 };
 const crearprod = async (req, res) => {
   try {
-    const { nombre, tipo, precio, stock, descripcion, imagen } = req.body;
+    const { nombre, tipo, tematica, precio, stock, descripcion, imagen } = req.body;
     const productoCreado = await Producto.create({
       nombre,
       tipo,
+      tematica,
       precio,
       stock,
       descripcion,
@@ -32,9 +33,14 @@ const crearprod = async (req, res) => {
 
 const traerproductos = async (req, res) => {
   try {
-    const productos = await Producto.findAll({
-      order: [["nombre", "ASC"]],
-    });
+    const tematica = req.query.tematica;
+
+    let productos;
+    if (tematica) {
+      productos = await Producto.findAll({ where: {tematica: tematica}})
+    } else {
+      productos = await Producto.findAll({ where: {order: [["nombre", "ASC"]]}})
+    }
 
     res.json(productos);
   } catch (error) {
