@@ -2,10 +2,6 @@ body {
   background-color: #c4d3b5;
   background-image: url(../img/fondoNombre.png);
   font-family: Georgia, serif;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .container-form {
   border: 2px solid #8da783;

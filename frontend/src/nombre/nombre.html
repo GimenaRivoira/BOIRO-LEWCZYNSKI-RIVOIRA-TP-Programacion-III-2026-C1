@@ -13,30 +13,37 @@
     <link rel="stylesheet" href="./nombre.css" />
   </head>
   <body>
-    <div class="container-form">
-      <form>
-        <div class="mb-3">
-          <img
-            src="../img/logoSimple.png"
-            alt="Logo Florea"
-            class="logo-florea"
-          />
+    <div class="container-fluid min-vh-100">
+      <div class="row min-vh-100 justify-content-center align-items-center">
+        <div class="col-11 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+          <div class="container-form">
+            <form>
+              <div class="mb-3 text-center">
+                <img
+                  src="../img/logoSimple.png"
+                  alt="Logo Florea"
+                  class="logo-florea img-fluid"
+                />
 
-          <label for="nombre" class="form-label fst-italic"
-            >Bienvenido a florea!</label
-          >
+                <label for="nombre" class="form-label fst-italic">
+                  Bienvenido a florea!
+                </label>
 
-          <input
-            type="text"
-            id="nombre"
-            class="form-control"
-            placeholder="Ingrese su nombre"
-          />
+                <input
+                  type="text"
+                  id="nombre"
+                  class="form-control"
+                  placeholder="Ingrese su nombre"
+                />
+              </div>
+
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </div>
+            </form>
+          </div>
         </div>
-        <div class="d-grid gap-2">
-          <button type="submit" class="btn btn-primary">Enviar</button>
-        </div>
-      </form>
+      </div>
     </div>
   </body>
 </html>
