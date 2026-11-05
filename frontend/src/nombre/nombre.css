@@ -1,0 +1,65 @@
+body {
+  background-color: #c4d3b5;
+  background-image: url(../img/fondoNombre.png);
+  font-family: Georgia, serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-form {
+  border: 2px solid #8da783;
+  border-radius: 25px;
+  padding: 55px;
+  background-color: rgba(220, 230, 211, 0.95);
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(64, 91, 67, 0.18);
+}
+.form-label {
+  display: block;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 30px;
+
+  color: #405b43;
+  margin-bottom: 25px;
+}
+
+.form-control {
+  height: 55px;
+  font-size: 20px;
+  background-color: #f8faf6;
+  border: 1px solid #a3b99b;
+  color: #405b43;
+}
+
+.form-control:focus {
+  border-color: #718e70;
+  box-shadow: 0 0 0 0.2rem rgba(113, 142, 112, 0.2);
+}
+
+button.btn.btn-primary {
+  background-color: #718e70;
+  border-color: #718e70;
+  color: white;
+  height: 55px;
+  font-size: 20px;
+}
+
+button.btn.btn-primary:hover {
+  background-color: #587457;
+  border-color: #587457;
+}
+
+button.btn.btn-primary:focus {
+  box-shadow: 0 0 0 0.25rem rgba(113, 142, 112, 0.4);
+}
+
+.logo-florea {
+  display: block;
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: contain;
+  margin: 0 auto 0px auto;
+}
