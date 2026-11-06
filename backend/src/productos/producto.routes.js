@@ -1,4 +1,5 @@
 const express = require("express");
+const upload = require("../common/multer");
 const {
   crearprod,
   traerprodporid,
@@ -11,8 +12,8 @@ const productoRouter = express.Router();
 
 productoRouter.get("/", traerproductos);
 productoRouter.get("/:id", traerprodporid);
-productoRouter.post("/", crearprod);
-productoRouter.put("/:id", modficarprodporid);
-productoRouter.get("/:id", eliminarprodporid);
+productoRouter.post("/", upload.single("imagen"), crearprod);
+productoRouter.put("/:id", upload.single("imagen"), modficarprodporid);
+productoRouter.delete("/:id", eliminarprodporid);
 
 module.exports = productoRouter;

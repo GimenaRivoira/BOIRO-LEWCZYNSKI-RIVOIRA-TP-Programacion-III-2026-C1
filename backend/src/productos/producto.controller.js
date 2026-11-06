@@ -7,7 +7,11 @@ const listarProductos = async (req, res) => {
 };
 const crearprod = async (req, res) => {
   try {
-    const { nombre, tipo, tematica, precio, stock, descripcion, imagen } = req.body;
+    const { nombre, tipo, tematica, precio, stock, descripcion} = req.body;
+
+  // Aca va la URL de la imagen subida para guardarla en la base de datos :)
+    const imagen = `http://localhost:3000/imagenes/${req.file.filename}`;
+
     const productoCreado = await Producto.create({
       nombre,
       tipo,
@@ -71,7 +75,7 @@ const traerprodporid = async (req, res) => {
 };
 const modficarprodporid = async (req, res) => {
   try {
-    const { nombre, tipo, precio, stock, descripcion, imagen } = req.body;
+    const { nombre, tipo, precio, stock, descripcion} = req.body;
     const { id } = req.params;
     let datosAModificar = {};
     if (nombre) {
@@ -84,15 +88,16 @@ const modficarprodporid = async (req, res) => {
     if (precio !== undefined) {
       datosAModificar.precio = precio;
     }
-    if (precio !== undefined) {
+    if (stock !== undefined) {
       datosAModificar.stock = stock;
     }
     if (descripcion) {
       datosAModificar.descripcion = descripcion;
     }
-    if (imagen) {
-      datosAModificar.imagen = imagen;
+    if (req.file) {
+      datosAModificar.imagen = `http://localhost:3000/imagenes/${req.file.filename}`; 
     }
+    
     const modficado = await Producto.update(datosAModificar, { where: { id } });
 
     res.json(modficado);
