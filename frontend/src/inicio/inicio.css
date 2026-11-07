@@ -1,21 +1,28 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     background: #F8F4EE;
+    display: flex;
+    flex-direction: column;
 }
 
 .placeholder-footer-header {
     border: 2px dashed red;
     color: red;
     text-align: center;
-    padding: 18px;
+    padding: 18px 18px;
     font-weight: bold;
     letter-spacing: 2px;
 }
 
 .cardsRecomendados {
-    background-color: #F8F4EE;
-    padding-top: 4rem;
+    padding-top: 2rem;
     padding-bottom: 4rem;
     width: 100%;
+    flex: 1; 
 }
 
 div.tituloCard {
@@ -32,7 +39,6 @@ span.tituloCard {
     letter-spacing: 2px;
 }
 
-
 .destacadoRecomendados {
     display: flex;
     flex-direction: row; 
@@ -41,15 +47,3 @@ span.tituloCard {
     max-width: 1200px;
     margin: 0 auto;
 }
-
-.cardsRecomendados {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    height: 100%;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    filter: invert(1);
-}
-

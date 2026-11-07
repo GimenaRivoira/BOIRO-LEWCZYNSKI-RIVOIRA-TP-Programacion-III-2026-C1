@@ -7,7 +7,7 @@ const listarProductos = async (req, res) => {
 };
 const crearprod = async (req, res) => {
   try {
-    const { nombre, tipo, tematica, precio, stock, descripcion} = req.body;
+    const { nombre, tipo, precio, stock, descripcion} = req.body;
 
   // Aca va la URL de la imagen subida para guardarla en la base de datos :)
     const imagen = `http://localhost:3000/imagenes/${req.file.filename}`;
@@ -15,7 +15,6 @@ const crearprod = async (req, res) => {
     const productoCreado = await Producto.create({
       nombre,
       tipo,
-      tematica,
       precio,
       stock,
       descripcion,
@@ -37,11 +36,11 @@ const crearprod = async (req, res) => {
 
 const traerproductos = async (req, res) => {
   try {
-    const tematica = req.query.tematica;
+    const tipo = req.query.tipo;
 
     let productos;
-    if (tematica) {
-      productos = await Producto.findAll({ where: {tematica: tematica}})
+    if (tipo) {
+      productos = await Producto.findAll({ where: {tipo: tipo}})
     } else {
       productos = await Producto.findAll({ where: {order: [["nombre", "ASC"]]}})
     }
