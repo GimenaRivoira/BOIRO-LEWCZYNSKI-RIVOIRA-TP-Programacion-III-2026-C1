@@ -17,11 +17,6 @@ const Producto = sequelize.define(
       type: DataTypes.ENUM("flores", "velas"),
       allowNull: false,
     },
-    tematica: {
-      type: DataTypes.ENUM("halloween", "navidad", "general"),
-      allowNull: false,
-      defaultValue: "general"
-    },
     precio: {
       type: INTEGER,
       allowNull: false,
