@@ -9,7 +9,7 @@ const {
 
 const ventasRouter = express.Router();
 
-ventasRouter.post("/", crearProductoVenta);
+ventasRouter.post("/creardetalle", crearProductoVenta);
 
 ventasRouter.get("/detalle/:id", traerdetalleventa);
 

@@ -59,12 +59,14 @@ const traerdetalleventa = async (req, res) => {
     });
   }
 };
+
+//requiere que le envien un total y nombre desde el lado cliente.
 const crearVenta = async (req, res) => {
-  //requiere que le envien un total desde el lado cliente.
   try {
-    const { total } = req.body;
+    const { nombre_cliente, total } = req.body;
 
     const ventaCreada = await Venta.create({
+      nombre_cliente,
       fecha: new Date(),
       total,
     });
