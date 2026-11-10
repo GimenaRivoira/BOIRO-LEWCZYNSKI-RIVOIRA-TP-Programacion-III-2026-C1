@@ -42,7 +42,7 @@ const traerproductos = async (req, res) => {
     if (tipo) {
       productos = await Producto.findAll({ where: {tipo: tipo}})
     } else {
-      productos = await Producto.findAll({ where: {order: [["nombre", "ASC"]]}})
+      productos = await Producto.findAll({ order: [["nombre", "ASC"]] })
     }
 
     res.json(productos);
