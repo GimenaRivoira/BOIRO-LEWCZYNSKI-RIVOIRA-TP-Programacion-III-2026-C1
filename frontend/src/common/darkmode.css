@@ -1,0 +1,49 @@
+/* Color del icono en modo claro (Sol) */
+[data-bs-theme="light"] #mode-toggler {
+  color: #2d4f44;
+}
+
+/* Color del icono en modo oscuro (Luna) */
+[data-bs-theme="dark"] #mode-toggler {
+  color: #a8d5ba;
+}
+/* Estilos generales cuando el tema es oscuro */
+[data-bs-theme="dark"] body {
+  background-color: #121a17;
+  color: #e0e0e0;
+}
+
+/* Navbar en modo oscuro */
+[data-bs-theme="dark"] .navbar {
+  background-color: #1a2823 !important;
+  border-bottom: 1px solid #2d4f44;
+}
+
+[data-bs-theme="dark"] .navbar-brand img {
+  filter: brightness(0.9);
+}
+
+[data-bs-theme="dark"] .offcanvas {
+  background-color: #1a2823;
+  color: #fff;
+}
+
+[data-bs-theme="dark"] .nav-link {
+  color: #d1d1d1 !important;
+}
+
+[data-bs-theme="dark"] .nav-link:hover,
+[data-bs-theme="dark"] .nav-link.active {
+  color: #ffffff !important;
+}
+
+/* Tarjetas en modo oscuro */
+[data-bs-theme="dark"] .card {
+  background-color: #1a2823;
+  border-color: #2d4f44;
+  color: #ffffff;
+}
+
+[data-bs-theme="dark"] .tituloCard h2 {
+  color: #ffffff;
+}
