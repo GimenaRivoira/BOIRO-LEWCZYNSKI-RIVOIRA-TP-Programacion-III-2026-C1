@@ -4,8 +4,43 @@ body {
   display: flex;
   flex-direction: column;
   background: #f8f4ee;
+  background-color: #c4d3b5;
+  background-image: url(../img/fondoproductos.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 main {
   flex: 1;
+}
+
+.placeholder-footer-header {
+  border: 2px dashed red;
+  color: red;
+  text-align: center;
+  padding: 18px 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.btn-custom-filtro {
+  background-color: #2D4F44;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.titulo-filtro {
+  color: #2D4F44;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .sidebar-filtro {
+    padding-top: 10vh; 
+  }
 }
