@@ -6,6 +6,9 @@ body {
 body {
   padding-top: 110px;
   background-color: #f8f4ee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 #ticketext {
