@@ -1,0 +1,14 @@
+footer {
+  background-color: #eae8dc;
+  color: #405b43;
+  font-family: Georgia, serif;
+  border-top: 1px solid #c4d3b5;
+  width: 100%;
+}
+footer > p {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+footer {
+  margin-top: auto;
+}
