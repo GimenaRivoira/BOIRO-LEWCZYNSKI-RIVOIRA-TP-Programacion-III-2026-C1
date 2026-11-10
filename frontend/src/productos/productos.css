@@ -1,8 +1,17 @@
 body {
+  padding-top: 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8f4ee;
   background-color: #c4d3b5;
   background-image: url(../img/fondoproductos.jpg);
   background-size: cover;
   background-attachment: fixed;
+}
+
+main {
+  flex: 1;
 }
 
 .placeholder-footer-header {

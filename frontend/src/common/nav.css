@@ -1,0 +1,40 @@
+body {
+  font-family: Georgia, serif;
+}
+/* NAVBAR */
+.navbar-florea {
+  background-color: #eae5d8 !important;
+}
+
+/* LINKS */
+.navbar-florea .nav-link {
+  color: #405b43;
+  font-size: 20px;
+}
+
+/* LINK AL PASAR EL MOUSE */
+.navbar-florea .nav-link:hover {
+  color: #8da783;
+}
+.btn-florea {
+  background-color: #405b43;
+  color: #f7f4ec;
+  border: 1px solid #405b43;
+  border-radius: 20px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  padding: 8px 22px;
+}
+
+/* EFECTO HOVER */
+.btn-florea:hover {
+  background-color: #8da783;
+  color: #ffffff;
+  border-color: #8da783;
+}
+
+@media (max-width: 992px) {
+  .offcanvas-body > ul {
+    width: 100% !important;
+  }
+}
