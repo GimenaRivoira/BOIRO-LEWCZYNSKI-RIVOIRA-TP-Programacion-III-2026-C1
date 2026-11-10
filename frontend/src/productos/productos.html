@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./productos.css" />
 </head>
-<body>
-    <h1>Productos</h1>
+<body class="d-flex flex-column min-vh-100">
+
+    <header class="placeholder-footer-header">
+        HEADER
+    </header>
+
+    <div class="main-content container-fluid flex-grow-1 px-4 py-3">
+        <div class="row h-100">
+            <div class="col-12 col-md-3 col-lg-2 sidebar-filtro d-flex flex-column align-items-center gap-2 pt-5">
+                <h5 class="titulo-filtro">Filtrar</h5>
+    
+                <button id="botonVelas" class="btn btn-dark w-100 btn-custom-filtro" onclick="cargarProductos('velas')">
+                    Velas
+                </button>
+                <button id="botonFlores" class="btn btn-dark w-100 btn-custom-filtro" onclick="cargarProductos('flores')">
+                    Flores
+                </button>
+            </div>
+
+            <div class="col-12 col-md-9 col-lg-10 pt-3">
+                <div id="listaProductos" class="d-flex flex-wrap justify-content-start gap-4"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="placeholder-footer-header">
+        FOOTER
+    </footer>
+
+    <script src="productos.js"></script>
 </body>
 </html>
