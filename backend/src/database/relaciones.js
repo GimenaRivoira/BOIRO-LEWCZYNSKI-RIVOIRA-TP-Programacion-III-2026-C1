@@ -6,6 +6,8 @@ const ProductosVenta = require("./Productos.Venta.model");
 Producto.belongsToMany(Venta, { through: ProductosVenta });
 Venta.belongsToMany(Producto, { through: ProductosVenta });
 
+ProductosVenta.belongsTo(Producto);
+ProductosVenta.belongsTo(Venta);
 async function syncMuchos() {
   await sequelize.sync({ alter: true });
 }
