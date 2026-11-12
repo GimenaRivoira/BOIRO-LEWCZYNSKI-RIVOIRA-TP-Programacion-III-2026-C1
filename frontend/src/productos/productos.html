@@ -74,17 +74,13 @@
                   >Home</a
                 >
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../productos/productos.html"
-                  >Flores</a
-                >
-              </li>
+
               <li class="nav-item">
                 <a
                   class="nav-link"
                   href="../productos/productos.html"
                   role="button"
-                  >Velas</a
+                  >Productos</a
                 >
               </li>
               <li class="nav-item">
@@ -122,21 +118,37 @@
       </div>
     </nav>
     <!--     ACA ESTAN MOSTRANDOSE LOS PRODUCTOS: -->
-    <div class="main-content container-fluid flex-grow-1 px-4 py-3" style="margin-top: 80px;">
+    <div
+      class="main-content container-fluid flex-grow-1 px-4 py-3"
+      style="margin-top: 80px"
+    >
       <div class="row h-100">
-        <div class="col-12 col-md-3 col-lg-2 sidebar-filtro d-flex flex-column align-items-center gap-2 pt-5">
+        <div
+          class="col-12 col-md-3 col-lg-2 sidebar-filtro d-flex flex-column align-items-center gap-2 pt-5"
+        >
           <h5 class="titulo-filtro">Filtrar</h5>
 
-          <button id="botonVelas" class="btn btn-dark w-100 btn-custom-filtro" onclick="cargarProductos('velas')">
+          <button
+            id="botonVelas"
+            class="btn btn-dark w-100 btn-custom-filtro"
+            onclick="cargarProductos('velas')"
+          >
             Velas
           </button>
-          <button id="botonFlores" class="btn btn-dark w-100 btn-custom-filtro" onclick="cargarProductos('flores')">
+          <button
+            id="botonFlores"
+            class="btn btn-dark w-100 btn-custom-filtro"
+            onclick="cargarProductos('flores')"
+          >
             Flores
           </button>
         </div>
 
         <div class="col-12 col-md-9 col-lg-10 pt-3">
-          <div id="listaProductos" class="d-flex flex-wrap justify-content-start gap-4"></div>
+          <div
+            id="listaProductos"
+            class="d-flex flex-wrap justify-content-start gap-4"
+          ></div>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 //importaciones
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 
 //Rutas
 const productoRouter = require("./productos/producto.routes");
@@ -18,6 +19,7 @@ app.use(express.json());
 app.use(
   cors({ origin: "http://127.0.0.1:5500", allowedHeaders: "content-type" }),
 );
+app.use(express.static(path.join(__dirname, "../../frontend")));
 app.use("/imagenes", express.static("img")); // ejemplo clase
 
 //Definicion de rutas
