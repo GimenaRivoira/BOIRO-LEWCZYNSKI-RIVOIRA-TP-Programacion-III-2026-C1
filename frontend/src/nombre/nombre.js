@@ -1,24 +1,25 @@
 window.addEventListener("load", () => {
-    const inputNombre = document.getElementById("nombre");
-    const boton = document.getElementById("botonEntrar");
+  const inputNombre = document.getElementById("nombre");
+  const boton = document.getElementById("botonEntrar");
+  const botonAdmin = document.getElementById("btnAdmin");
 
-    boton.disabled = true;
+  boton.disabled = true;
 
-    inputNombre.addEventListener("input", () => {
-        if (inputNombre.value.trim() === "") {
-            boton.disabled = true;
-        } else {
-            boton.disabled = false;
-        }
-        
-    })
+  inputNombre.addEventListener("input", () => {
+    if (inputNombre.value.trim() === "") {
+      boton.disabled = true;
+    } else {
+      boton.disabled = false;
+    }
+  });
 
-    boton.addEventListener("click", () => {
-        const nombre = inputNombre.value.trim();
+  boton.addEventListener("click", () => {
+    const nombre = inputNombre.value.trim();
 
-        if(nombre !== ""){
-            localStorage.setItem("nombreCliente", nombre);
-            window.location.href = "../inicio/inicio.html"
-        };
-    });
+    if (nombre !== "") {
+      localStorage.setItem("nombreCliente", nombre);
+      window.location.href = "../inicio/inicio.html";
+    }
+  });
+  botonAdmin.addEventListener("click", () => {});
 });

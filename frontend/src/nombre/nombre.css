@@ -59,3 +59,44 @@ button.btn.btn-primary:focus {
   object-fit: contain;
   margin: 0 auto 0px auto;
 }
+
+[data-bs-theme="dark"] body {
+  background-color: #121a17;
+  background-image: none;
+}
+
+[data-bs-theme="dark"] .container-form {
+  background-color: rgba(26, 40, 35, 0.97);
+  border-color: #456b57;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="dark"] .form-label {
+  color: #d1dfd1;
+}
+
+[data-bs-theme="dark"] .form-control {
+  background-color: #263a32;
+  border-color: #587457;
+  color: #ffffff;
+}
+
+[data-bs-theme="dark"] .form-control::placeholder {
+  color: #b5c5bc;
+}
+
+[data-bs-theme="dark"] .form-control:focus {
+  border-color: #a8c5a8;
+  box-shadow: 0 0 0 0.2rem rgba(168, 197, 168, 0.2);
+}
+
+/* Botón enviar */
+[data-bs-theme="dark"] button.btn.btn-primary {
+  background-color: #456b57;
+  border-color: #456b57;
+}
+
+[data-bs-theme="dark"] button.btn.btn-primary:hover {
+  background-color: #587e65;
+  border-color: #587e65;
+}
