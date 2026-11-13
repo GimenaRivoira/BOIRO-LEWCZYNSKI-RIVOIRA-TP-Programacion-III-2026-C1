@@ -41,8 +41,8 @@
 
       <div class="row min-vh-100 justify-content-center align-items-center">
         <div class="col-11 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
-          <div class="container-form">
-            <form id="formNombre">
+          <div class="container-form" >
+            <form id="formNombre" class="needs-validation" novalidate>
               <div class="mb-3 text-center">
                 <img
                   src="../img/logoSimple.png"
@@ -59,13 +59,15 @@
                   id="nombre"
                   class="form-control"
                   placeholder="Ingrese su nombre"
+                  required
+                  minlength="3"
                 />
               </div>
 
               <div class="d-grid gap-2">
-                <button type="button" class="btn btn-primary" id="botonEntrar">
-                  Enviar
-                </button>
+                <button type="submit" class="btn btn-primary" id="botonEntrar">
+  Enviar
+</button>
               </div>
             </form>
           </div>
