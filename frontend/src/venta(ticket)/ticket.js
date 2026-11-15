@@ -1,4 +1,7 @@
 const btnfinalizar = document.getElementById("btnterminar");
+const btnpdf = document.getElementById("btnpdf");
+let ventaActual;
+let detallesActuales = [];
 document.addEventListener("DOMContentLoaded", () => {
   cargarTicket();
 });
@@ -17,6 +20,7 @@ async function cargarTicket() {
     );
 
     const venta = await respuestaVenta.json();
+    ventaActual = venta;
 
     if (!respuestaVenta.ok) {
       throw new Error(venta.mensaje || "No se pudo encontrar la venta");
@@ -27,6 +31,7 @@ async function cargarTicket() {
     );
 
     const detalles = await respuestaDetalle.json();
+    detallesActuales = detalles;
 
     if (!respuestaDetalle.ok) {
       throw new Error("error en el detalle compra");
@@ -42,7 +47,8 @@ async function cargarTicket() {
     contenidoticket.appendChild(nombreCliente);
 
     const fecha = document.createElement("p");
-    fecha.textContent = "Fecha: " + venta.fecha;
+    fecha.textContent =
+      "Fecha: " + new Date(venta.fecha).toLocaleDateString("es-AR");
 
     contenidoticket.appendChild(fecha);
 
@@ -80,7 +86,89 @@ async function cargarTicket() {
     console.error("No se pudo cargar el ticket:", error.message);
   }
 }
-(btnfinalizar.addEventListener("click"),
-  async (ev) => {
-    localStorage.removeItem("nombreCliente");
+btnfinalizar.addEventListener("click", () => {
+  localStorage.removeItem("nombreCliente");
+  ventaActual = null;
+  detallesActuales = [];
+});
+
+function generarPDF() {
+  const { jsPDF } = window.jspdf;
+
+  const doc = new jsPDF();
+
+  let ubicaciontexto = 20;
+
+  doc.setFontSize(22);
+  doc.text("FLOREA", 105, ubicaciontexto, { align: "center" });
+
+  ubicaciontexto += 15;
+
+  doc.setFontSize(12);
+  doc.text("¡Gracias por tu compra!", 105, ubicaciontexto, {
+    align: "center",
   });
+
+  ubicaciontexto += 15;
+
+  doc.setFontSize(12);
+
+  doc.text("Cliente: " + ventaActual.nombre_cliente, 20, ubicaciontexto);
+
+  ubicaciontexto += 10;
+
+  doc.text(
+    "Fecha: " + new Date(ventaActual.fecha).toLocaleDateString("es-AR"),
+    20,
+    ubicaciontexto,
+  );
+
+  ubicaciontexto += 15;
+
+  doc.setFontSize(15);
+  doc.text("Detalle de tu compra", 20, ubicaciontexto);
+
+  ubicaciontexto += 12;
+
+  doc.setFontSize(11);
+
+  detallesActuales.forEach((detalle) => {
+    doc.text("Producto: " + detalle.Producto.nombre, 20, ubicaciontexto);
+
+    ubicaciontexto += 7;
+
+    doc.text("Cantidad: " + detalle.cantidad, 20, ubicaciontexto);
+
+    ubicaciontexto += 7;
+
+    doc.text(
+      "Precio unitario: $" + detalle.precio_unitario,
+      20,
+      ubicaciontexto,
+    );
+
+    ubicaciontexto += 7;
+
+    doc.text(
+      "Subtotal: $" + detalle.precio_unitario * detalle.cantidad,
+      20,
+      ubicaciontexto,
+    );
+
+    ubicaciontexto += 12;
+  });
+
+  doc.setFontSize(15);
+
+  doc.text("Total: $" + ventaActual.total, 20, ubicaciontexto);
+
+  doc.save("Ticket_FLOREA.pdf");
+}
+btnpdf.addEventListener("click", () => {
+  if (!ventaActual || detallesActuales.length === 0) {
+    console.log("No se pudo generar el PDF");
+    return;
+  }
+
+  generarPDF();
+});
