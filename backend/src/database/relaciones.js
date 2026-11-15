@@ -2,6 +2,7 @@ const sequelize = require("./sequelize");
 const Producto = require("../productos/producto.model");
 const Venta = require("../ventas/venta.model");
 const ProductosVenta = require("./Productos.Venta.model");
+const Admin = require("../Admins/admin.model");
 
 Producto.belongsToMany(Venta, { through: ProductosVenta });
 Venta.belongsToMany(Producto, { through: ProductosVenta });
@@ -14,4 +15,4 @@ async function syncMuchos() {
 
 syncMuchos();
 
-module.exports = { Producto, Venta, ProductosVenta };
+module.exports = { Producto, Venta, ProductosVenta, Admin };
