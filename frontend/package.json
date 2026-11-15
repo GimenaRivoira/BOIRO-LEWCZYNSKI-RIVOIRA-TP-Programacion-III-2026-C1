@@ -12,6 +12,7 @@
   "type": "commonjs",
   "dependencies": {
     "boostrap": "^2.0.0",
-    "jspdf": "^4.2.1"
+    "jspdf": "^4.2.1",
+    "toastify-js": "^1.12.0"
   }
 }

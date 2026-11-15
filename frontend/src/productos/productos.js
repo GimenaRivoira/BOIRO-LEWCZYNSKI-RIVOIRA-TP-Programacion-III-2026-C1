@@ -8,7 +8,6 @@ window.addEventListener("load", () => {
   cargarProductos(tipo);
 });
 
-
 async function cargarProductos(tipo) {
   let url = "http://localhost:3000/productos";
 
@@ -68,7 +67,7 @@ function agregarAlCarrito(id) {
   const producto = window.productosDisponibles.find((p) => p.id === id);
 
   if (!producto) {
-    alert("Producto no encontrado");
+    mostrarToast("Producto no encontrado", "#b94a48");
     return;
   }
 
@@ -86,7 +85,7 @@ function agregarAlCarrito(id) {
     if (productoEnCarrito.cantidad < producto.stock) {
       productoEnCarrito.cantidad++;
     } else {
-      alert("No hay suficiente stock disponible");
+      mostrarToast("No hay suficiente stock disponible", "#b94a48");
       return;
     }
   } else {
@@ -101,4 +100,19 @@ function agregarAlCarrito(id) {
   }
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
+
+  mostrarToast("¡Producto agregado al carrito!", "#8da783");
+}
+function mostrarToast(mensaje, color) {
+  Toastify({
+    text: mensaje,
+    duration: 5000,
+    close: true,
+    gravity: "top",
+    position: "right",
+    stopOnFocus: true,
+    style: {
+      background: color,
+    },
+  }).showToast();
 }

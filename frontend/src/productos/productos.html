@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="../common/darkmode.css" />
     <link rel="stylesheet" href="../common/nav.css" />
     <link rel="stylesheet" href="../common/footer.css" />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/toastify-js/src/toastify.css"
+    />
 
     <link
       rel="stylesheet"
@@ -83,10 +87,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/src/nombre/nombre.html"
-                  role="button"
+                <a class="nav-link" href="/src/nombre/nombre.html" role="button"
                   >Salir</a
                 >
               </li>
@@ -138,14 +139,14 @@
           <button
             id="botonVelas"
             class="btn btn-dark w-100 btn-custom-filtro"
-            onclick="window.location.href='productos.html?tipo=velas'"
+            onclick="window.location.href = 'productos.html?tipo=velas'"
           >
             Velas
           </button>
           <button
             id="botonFlores"
             class="btn btn-dark w-100 btn-custom-filtro"
-            onclick="window.location.href='productos.html?tipo=flores'"
+            onclick="window.location.href = 'productos.html?tipo=flores'"
           >
             Flores
           </button>
@@ -176,5 +177,6 @@
     <script src="../common/darkmode.js"></script>
     <script src="../common/darkmode.js"></script>
     <script src="productos.js"></script>
+    <script src="../../node_modules/toastify-js/src/toastify.js"></script>
   </body>
 </html>
