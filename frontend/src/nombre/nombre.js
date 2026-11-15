@@ -30,5 +30,7 @@ window.addEventListener("load", () => {
     }
   });
 
-  botonAdmin.addEventListener("click", () => {});
+  botonAdmin.addEventListener("click", () => {
+    window.location.href = "http://localhost:3000/admin/login";
+  });
 });
