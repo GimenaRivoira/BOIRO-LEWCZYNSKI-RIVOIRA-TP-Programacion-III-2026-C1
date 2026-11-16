@@ -2,6 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const z = require('zod');
 
 //Rutas
 const productoRouter = require("./productos/producto.routes");
@@ -38,3 +39,12 @@ const PORT = 3000;
 app.listen(PORT, () =>
   console.log(`el server se levanto correctamente en el puerto ${PORT}`),
 );
+
+//middleware
+app.use((err, req, res, next) => {
+  if (err instanceof z.ZodError) {
+    return res.status(400).json(err.issues);
+  }
+
+  res.status(500).send({mensaje: "Error desconocido"});
+})

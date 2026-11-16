@@ -10,10 +10,13 @@ const {
 
 const productoRouter = express.Router();
 
+const {validarID} = require("../common/middlewares");
+const { crearProductoMW, modificarProductoMW } = require("./producto.middleware");
+
 productoRouter.get("/", traerproductos);
-productoRouter.get("/:id", traerprodporid);
-productoRouter.post("/", upload.single("imagen"), crearprod);
-productoRouter.put("/:id", upload.single("imagen"), modficarprodporid);
-productoRouter.delete("/:id", eliminarprodporid);
+productoRouter.get("/:id", validarID, traerprodporid);
+productoRouter.post("/", upload.single("imagen"), crearProductoMW, crearprod);
+productoRouter.put("/:id", validarID, upload.single("imagen"), modificarProductoMW, modficarprodporid);
+productoRouter.delete("/:id", validarID, eliminarprodporid);
 
 module.exports = productoRouter;

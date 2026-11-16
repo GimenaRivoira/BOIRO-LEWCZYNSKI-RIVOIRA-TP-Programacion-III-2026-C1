@@ -99,7 +99,18 @@ const modficarprodporid = async (req, res) => {
     
     const modficado = await Producto.update(datosAModificar, { where: { id } });
 
-    res.json(modficado);
+    if (modficado[0] === 0) {
+      return res.status(404).json({
+        ok: false,
+        mensaje: "producto no encontrado",
+      });
+    }
+
+    res.status(200).json({
+      ok: true,
+      mensaje: "Producto modificado correctamente"
+    });
+
   } catch (error) {
     res.status(500).json({
       ok: false,
